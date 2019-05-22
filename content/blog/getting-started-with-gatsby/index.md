@@ -1,6 +1,7 @@
 ---
 title: Getting started with gatsby
 date: "2019-05-22T22:12:03.284Z"
+description: How to install gatsby locally
 ---
 
 I wanted to start a blog about frontend related topics a long time ago. Due to the inspiration
@@ -33,4 +34,3 @@ gatsby new my_site_name
 cd my_site_name
 gatsby develop
 ```
-
