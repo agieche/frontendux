@@ -1,9 +1,23 @@
+:root {
+  --color-primary: #a058f8;
+  --color-primary-alternate: #ffffff;
+
+  --color-secondary: #CE7DA5;
+
+  --color-copy-primary: #1a1a1a;
+  --color-copy-primary-inverted: #ffffff;
+  --color-link: #a058f8;
+  --color-link-hover: #a058f8;
+  --color-link-inverted: #ffffff;
+  --font-weight-strong: 600;
+  --font-weight-regular: 400;
+} 
+
 ul, ol {
   list-style-position: inside;
 }
 
 /* code highlighting */
-
 .gatsby-highlight-code-line {
   background-color: #4d4d4d; /* Adjust for your prismjs theme color */
   display: block;
@@ -14,22 +28,25 @@ ul, ol {
   border-left: 0.25em solid #f99;
 }
 
+/* Make the highlight-line start at the beginning of the line,
+when line numbers are displayed */
 .line-numbers .gatsby-highlight-code-line {
   margin-left: -3.8em;
   padding-left: 3.55em;
 }
-
 
 /**
  * Add back the container background-color, border-radius, padding, margin
  * and overflow that we removed from <pre>.
  */
  .gatsby-highlight {
+  position: relative;
   background-color: #2d2d2d; /* Use your prismjs theme color */
   border-radius: 0.3em;
   margin: 0;
   margin-bottom: 2.5rem;
   padding: 1em;
+  padding-top: 2em;
   overflow: auto;
 }
 
@@ -53,12 +70,22 @@ ul, ol {
 /**
  * If you only want to use line numbering
  */
-
-
-
- 
 .gatsby-highlight pre[class*="language-"].line-numbers {
   padding: 0;
   padding-left: 2.8em;
   overflow: initial;
+}
+
+.gatsby-highlight::before {
+  position: absolute;
+  left: 15px;
+  top: -2px;
+  width: auto;
+  content: attr(data-language);
+  color: var(--color-copy-primary-inverted);
+  padding: 0 3px;
+  border-radius: 0 0 4px 4px;
+  font-size: 12px;
+  background-color: var(--color-secondary);
+  text-transform: uppercase;
 }
