@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `FrontendUX`,
     author: `Alex`,
-    description: `Developing neat things with neat tools neatly.`,
+    description: `Developing neat things with neat tools neatly. Nightly.`,
     siteUrl: `https://frontendux.dev/`,
     social: {
       twitter: `nerdsmantel`,
@@ -61,7 +61,7 @@ module.exports = {
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#a058f8`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },
