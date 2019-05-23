@@ -1,0 +1,9 @@
+ul, ol {
+  list-style-position: inside;
+}
+
+pre[class*="language-"] {
+  margin: 0;
+  margin-bottom: 2.5rem;
+}
+
