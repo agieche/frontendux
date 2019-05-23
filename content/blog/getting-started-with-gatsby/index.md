@@ -74,27 +74,46 @@ If you\'re not familiar with Markdown yet, have a look at the [Markdown GitHub G
 
 The default layout, that is provided from the starter teomplate is clean, but you definitely want to give it a little twist to make your blog stand our a little. To add a globally available style, you may add a layout.css file.
 
-`src/components/layout.css`
+
 ```css
-/* My custom global styles */
-ul, ol {
-  margin-left: 0;
-  list-style-position: inside;
+/* src/components/layout.css */
+
+html {
+  box-sizing: border-box;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
 }
 ```
 
 Then, include the layout.css within your layout component.
 
-`src/components/layout.js`
-```js
+```js{numberLines: true}
+// src/components/layout.js
 import React from "react"
 import { Link } from "gatsby"
+// highlight-next-line
 import "./layout.css"
 
 class Layout extends React.Component {
     // snipped for brevity
 }
 ```
+
+```js
+// src/components/layout.js
+import React from "react"
+import { Link } from "gatsby"
+// highlight-next-line
+import "./layout.css"
+
+class Layout extends React.Component {
+    // snipped for brevity
+}
+```
+
+
 
 Finished! Now, your global styling should be included by your layout component. Since the layout component is present on every route, the style is loaded everywhere. Lets proceed to plugins.
 
@@ -160,7 +179,7 @@ plugins: [
 ```
 
 Picking a theme (available here: https://github.com/PrismJS/prism/tree/master/themes)
-```js
+```js{numberLines: true}
 // gatsby-browser.js
 require("prismjs/themes/prism-tomorrow.css");
 ```
