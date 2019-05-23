@@ -15,7 +15,7 @@ I went for it, since it is
 - documented very well
 - praised on twitter and on other blogs.
 
-I found several great introductions on how to setup a gatsby blog, e.g. [here](https://daveceddia.com/start-blog-gatsby-netlify/).
+I found several great introductions on how to [setup a gatsby blog](https://daveceddia.com/start-blog-gatsby-netlify/).
 
 ## How to run gatsby locally
 
