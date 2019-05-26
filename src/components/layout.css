@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #a058f8;
+  --color-primary: #7d19f7;
   --color-primary-alternate: #ffffff;
 
   --color-secondary: #CE7DA5;
@@ -12,10 +12,22 @@
   --font-weight-strong: 600;
   --font-weight-regular: 400;
   --line-thickness: 4px;
+
+  --breakpoint--phone: 480px;
 } 
 
 ul, ol {
   list-style-position: inside;
+}
+
+.logo svg {
+  max-width: 90%;
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    text-align: center;
+  }  
 }
 
 .screenreader {

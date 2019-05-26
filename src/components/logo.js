@@ -6,41 +6,14 @@
  */
 
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-
-import { rhythm } from "../utils/typography"
+import LogoImage from "../../content/assets/logo.svg";
 
 function Logo(props) {
   return (
-    <StaticQuery
-      query={logoQuery}
-      render={data => {
-        return (
-          <Image
-              fixed={data.logo.childImageSharp.fixed}
-              style={{
-              }}
-              imgStyle={{
-              }}
-              alt={props.title}
-          />
-        )
-      }}
-    />
+    <div className='logo'>
+      <LogoImage />
+    </div>
   )
 }
-
-const logoQuery = graphql`
-  query LogoQuery {
-    logo: file(absolutePath: { regex: "/logo.png/" }) {
-      childImageSharp {
-        fixed(height: 50) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
 
 export default Logo
