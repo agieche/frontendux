@@ -6,15 +6,29 @@
 
   --color-copy-primary: #1a1a1a;
   --color-copy-primary-inverted: #ffffff;
-  --color-link: #a058f8;
+  --color-link: #7d19f7;
   --color-link-hover: #a058f8;
   --color-link-inverted: #ffffff;
   --font-weight-strong: 600;
   --font-weight-regular: 400;
+  --line-thickness: 4px;
 } 
 
 ul, ol {
   list-style-position: inside;
+}
+
+.screenreader {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }
 
 /* code highlighting */
@@ -86,6 +100,6 @@ when line numbers are displayed */
   padding: 0 3px;
   border-radius: 0 0 4px 4px;
   font-size: 12px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   text-transform: uppercase;
 }
