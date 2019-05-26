@@ -34,6 +34,7 @@ class BlogPostTemplate extends React.Component {
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
+            className='without-number'
             style={{
               marginBottom: rhythm(1),
             }}
@@ -65,7 +66,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-        <hr />
+        <hr className='without-number'/>
         <Disqus 
           identifier={post.id}
           title={post.frontmatter.title}

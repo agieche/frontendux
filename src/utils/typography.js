@@ -1,5 +1,6 @@
 import Typography from "typography"
 import Wordpress2016 from "typography-theme-wordpress-2016"
+import { isAbsolute } from "path";
 
 Wordpress2016.overrideThemeStyles = () => {
   return {
@@ -11,10 +12,6 @@ Wordpress2016.overrideThemeStyles = () => {
     },
     "a:hover": {
       color: `var(--color-link-hover)`,
-    },
-    "hr": {
-      background: `var(--color-primary)`,
-      height: `var(--line-thickness)`
     }
   }
 }

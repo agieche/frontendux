@@ -43,6 +43,13 @@ ul, ol {
   word-wrap: normal !important;
 }
 
+hr {
+  position: relative;
+  background: var(--color-primary);
+  height: var(--line-thickness);
+  margin-bottom: 6rem;
+}
+
 /* code highlighting */
 .gatsby-highlight-code-line {
   background-color: #4d4d4d; /* Adjust for your prismjs theme color */
@@ -74,6 +81,7 @@ when line numbers are displayed */
   padding: 1em;
   padding-top: 2em;
   overflow: auto;
+  box-shadow: 9px 10px 0px -2px rgba(0,0,0,0.1);
 }
 
 /**
@@ -115,3 +123,5 @@ when line numbers are displayed */
   background-color: var(--color-primary);
   text-transform: uppercase;
 }
+
+
