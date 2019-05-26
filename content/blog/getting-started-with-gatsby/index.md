@@ -358,7 +358,57 @@ For more info about the plugin, visit the [plugin page](https://www.gatsbyjs.org
 
 ## Add a comment form below your article
 
-TBD - Still need to figure this one out. Come back later.
+One easy way to enable comments for your content is **disqus**.  More info [here](https://disqus.com/).
+
+Install the disqus plugin for gatsby:
+
+```shell
+npm install -S gatsby-plugin-disqus
+# or
+yarn add gatsby-plugin-disqus
+```
+
+Adjust your config file and insert your disqus short name there. In case, you don't have a disqus account, register [here](https://disqus.com/).
+
+```js
+// gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `your-disqus-shortname`
+      }
+    },
+  ]
+}
+```
+
+Now, you can add the Disqus Component to your article template.
+
+```js
+// src/templates/blog-post
+import Disqus from 'gatsby-plugin-disqus'
+
+class BlogPostTemplate extends React.Component {
+  render() {
+    const post = this.props.data.markdownRemark
+
+    return (
+      <Layout>
+        /* post snipped for brevity */
+        <Disqus 
+          identifier={post.id}
+          title={post.frontmatter.title}
+        />
+      </Layout>
+    )
+  }
+}
+
+```
+
+Now, there should be a comment form below your post. 🎉
 
 ## Deploy your blog to netlify
 

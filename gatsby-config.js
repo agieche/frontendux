@@ -142,6 +142,13 @@ module.exports = {
       },
     },
 
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `frontendux`
+      }
+    },
+
 
     {
       resolve: "gatsby-plugin-react-svg",
