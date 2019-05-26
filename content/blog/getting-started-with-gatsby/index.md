@@ -437,6 +437,6 @@ TBD - Figured it out, but need to write about it...
 
 <hr class='without-number' />
 
-## You have any ideas, what is still missing on this gatsby blog?
+## Conclusion
 
-Send me a DM on twitter.
+TBD

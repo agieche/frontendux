@@ -67,6 +67,7 @@ class BlogPostTemplate extends React.Component {
           </li>
         </ul>
         <hr className='without-number'/>
+        <h2>Questions or feedback? Write your comment:</h2>
         <Disqus 
           identifier={post.id}
           title={post.frontmatter.title}
