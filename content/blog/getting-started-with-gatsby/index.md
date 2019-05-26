@@ -311,7 +311,50 @@ If you want to know more about code and syntax highlighting, go see [gatsby-rema
 
 ## Add google analytics to your blog
 
-TBD - Still need to figure this one out. Come back later.
+If you want to have insights on, how often your blog is visited and by whom, it's very easy to integrate google analytics tracking with gatsby. 
+
+```shell
+npm install --save gatsby-plugin-google-analytics
+# or
+yarn add gatsby-plugin-google-analytics
+```
+
+After installing, just add this bit of code to your config file:
+```js
+
+// gatsby-config.js
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        // Enables Google Optimize using your container Id
+        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+        // Enables Google Optimize Experiment ID
+        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
+        // Set Variation ID. 0 for original 1,2,3....
+        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
+        // Any additional create only fields (optional)
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "example.com",
+      },
+    },
+  ],
+}
+
+```
+
+For more info about the plugin, visit the [plugin page](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/).
 
 ## Add a comment form below your article
 
