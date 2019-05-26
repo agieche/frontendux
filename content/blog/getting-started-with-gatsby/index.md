@@ -70,7 +70,7 @@ After the build is finished, the `./public` directory should be populated with y
 
 ## Write your content with Markdown
 
-You can write plain markdown in your articles. Your content is editable under `./content/hello-world`. You can add new directories with an index.md file to add a new article to your blog.
+Gatsby is very flexible when it comes to data sources. One easy way to insert data into your blog is by writing markdown files. Your first article (when using the blog starter pack) is editable under `./content/hello-world`. You can add new directories (with an index.md) to the `content`-directory  to add new articles. Gatsby will figure out, that there is a new article and will display it on the homepage article listing.
 
 If you\'re not familiar with Markdown yet, have a look at the [Markdown GitHub Guide](https://guides.github.com/features/mastering-markdown/).
 
