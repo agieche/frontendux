@@ -19,6 +19,8 @@ I decided to give **gatsby** a spin, since it is
 
 I found several great introductions on how to [setup a gatsby blog](https://daveceddia.com/start-blog-gatsby-netlify/) in general, but since developers also need some plugins for code highlighting, I decided to write my own setup article.
 
+-----------------
+
 ## How to run gatsby locally
 
 **Prerequisites**
@@ -64,6 +66,8 @@ gatsby build
 ````
 After the build is finished, the `./public` directory should be populated with your updated blog site including all html, images, js and css.
 
+-----------------
+
 ## Write your content with Markdown
 
 You can write plain markdown in your articles. Your content is editable under `./content/hello-world`. You can add new directories with an index.md file to add a new article to your blog.
@@ -88,6 +92,9 @@ I only have experience with rails and wordpress, when it comes
 serving a blog, this is a complete new stack for me. YAY! Let/'s dive in.
 
 ```
+
+-----------------
+
 
 ## Adjust styling
 
@@ -135,6 +142,8 @@ class Layout extends React.Component {
 
 
 Finished! Now, your global styling should be included by your layout component. Since the layout component is present on every route, the style is loaded everywhere. Lets proceed to plugins.
+
+-----------------
 
 ## Code Highlighting with Gatsby Plugins
 To make code examples easier to grasp, syntax highlighting is a nice addition when using a `<pre>`.
@@ -217,12 +226,18 @@ and it will be displayed as:
 console.log('hello world');
 ```
 
+-----------------
+
 ## Enable line numbers and line-highlighting
+
+To make your code examples even better to understand, you can add support for **line numbers** and highlighting of specific line(s). Here's how you do it. First, add the corresponding styling in your browser file.
 
 ```js
 //gatsby-browser.js
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")
 ```
+
+Now you need to add some more custom styles to make prism styles work with gatsby:
 
 ```css
 /*layout.css*/
@@ -285,7 +300,7 @@ when line numbers are displayed */
 }
 ```
 
-Try it out:
+Ok, lets try it out:
 
 ```markdown
 
@@ -308,6 +323,8 @@ console.log('line3');
 
 Isn't this a nice touch for your new devblog? 🎉 So that\'s it about code highlighting.
 If you want to know more about code and syntax highlighting, go see [gatsby-remark-prismjs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/) and [using-remark.gatsbyjs.org](https://using-remark.gatsbyjs.org/code-and-syntax-highlighting).
+
+-----------------
 
 ## Add google analytics to your blog
 
@@ -355,6 +372,8 @@ module.exports = {
 ```
 
 For more info about the plugin, visit the [plugin page](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/).
+
+-----------------
 
 ## Add a comment form below your article
 
@@ -410,9 +429,13 @@ class BlogPostTemplate extends React.Component {
 
 Now, there should be a comment form below your post. 🎉
 
+-----------------
+
 ## Deploy your blog to netlify
 
 TBD - Figured it out, but need to write about it...
+
+-----------------
 
 ## You have any ideas, what is still missing on this gatsby blog?
 

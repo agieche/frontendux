@@ -65,6 +65,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        <hr />
         <Disqus 
           identifier={post.id}
           title={post.frontmatter.title}
