@@ -6,7 +6,7 @@ description: Follow my short journey on starting a development blog with gatsby.
 
 I wanted to start a blog about frontend related topics for a long time now. Due to the inspiration
 at [Google I/O 19](https://events.google.com/io/), I started to setup my blog this evening. Since I read a lot of good feedback about it, I 
-wanted to build this blog with a static site generator called [gatsby.js](https://www.gatsbyjs.org/). I only have experience with rails and wordpress, when it comes serving a blog - so this is a complete new stack for me. YAY! 😻 Let/'s dive in.
+wanted to build this blog with a static site generator called [gatsby.js](https://www.gatsbyjs.org/). I only have experience with rails and wordpress, when it comes serving a blog - so this is a complete new stack for me. YAY! 😻 Let's dive in.
 
 ## Gatsby FTW
 
