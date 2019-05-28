@@ -29,26 +29,38 @@
 }
 
 .post h2 {
-  font-size: 2.73rem;
+  font-size: 3rem;
 }
 
+
+.post hr {
+  /* background-color: transparent; */
+  margin: 5em 0 7em;
+  background-color: rgba(125,25,247,0.1);
+}
+
+.post hr:not(.without-number) + h2 {
+  padding-left: 40px;
+  margin-bottom: 3rem;
+}
 
 .post hr:not(.without-number)::before {
   counter-increment: post;
-  content: "" counter(post) "";
+  content: ""counter(post)".";
   position: absolute;
-  left: -150px;
-  right: auto;
+  right: calc(100% + -33px);
   top: 0px;
   color: var(--color-primary);
   font-size: 11rem;
-  opacity: 0.2;
   text-align: right;
+  -webkit-transition: left .7s ease, right .7s ease, top .7s ease, font-size .7s ease;
   transition: left .7s ease, right .7s ease, top .7s ease, font-size .7s ease;
+  -webkit-transform: translateY(-34%);
+  transform: translateY(-18%);
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1150px) {
 
   .post h1 {
     font-size: 2.73rem;
@@ -58,15 +70,24 @@
     font-size: 2rem;
   }
   
+  .post hr:not(.without-number) + h2 {
+    padding-left: 0;
+  }
+  
+
   .post hr:not(.without-number)::before {
-    left: auto;
-    right: 30px;
+    content: ""counter(post)"";
+    left: 0;
     opacity: 0.1;
     top: -30px;
+    transform: translateY(-11%);
   }
 }
 
 @media screen and (max-width: 480px) {
+  .post hr {
+    margin-top: 2em;
+  }
   .post h1 {
     font-size: 2.25rem;
   }
@@ -76,6 +97,9 @@
   }
 
   .post hr:not(.without-number)::before {
-    display: none;
+    right: auto;
+    content: ""counter(post)".";
+    font-size: 5rem;
+    transform: translateY(20%);
   }
 }

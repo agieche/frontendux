@@ -2,18 +2,24 @@
   --color-primary: #7d19f7;
   --color-primary-alternate: #ffffff;
 
-  --color-secondary: #CE7DA5;
+  --color-secondary: #00df7a;
 
   --color-copy-primary: #1a1a1a;
   --color-copy-primary-inverted: #ffffff;
   --color-link: #7d19f7;
   --color-link-hover: #a058f8;
   --color-link-inverted: #ffffff;
+  --color-background-alternate: #c0ffe2;
+
+
   --font-weight-strong: 600;
   --font-weight-regular: 400;
   --line-thickness: 4px;
 
   --breakpoint--phone: 480px;
+  --header-height: 124px;
+  --standard-text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+  --grid-max-width: 54rem;
 } 
 
 ul, ol {
@@ -22,6 +28,14 @@ ul, ol {
 
 .logo svg {
   max-width: 90%;
+}
+
+.logo__icon {
+  fill: var(--color-secondary);
+}
+
+.logo__text {
+  fill: var(--color-primary-alternate);
 }
 
 @media screen and (max-width: 480px) {
@@ -47,7 +61,95 @@ hr {
   position: relative;
   background: var(--color-primary);
   height: var(--line-thickness);
-  margin-bottom: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.container {
+  padding: 6em 1em;
+}
+
+.container--hero:first-of-type {
+  padding-top: var(--header-height);
+}
+
+.container:not(.container--hero):first-of-type {
+  padding-top: calc(var(--header-height) + 4em);
+}
+
+.logo {
+  height: 48px;
+}
+
+.container--alternate {
+  background-color: var(--color-background-alternate);
+}
+
+.container--hero {
+  display: flex;
+  background-color: var(--color-primary);
+  height: 70vh;
+  min-height: 600px;
+}
+
+.container--hero * {
+  color: var(--color-primary-alternate);
+}
+
+.container--hero h1 {
+  font-size: 5.5rem;
+  margin: 0;
+  text-shadow: var(--standard-text-shadow);
+}
+
+.container--hero p {
+  margin: 0;
+}
+
+@media screen and (max-width:1024px) {
+  .container--hero h1 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .container {
+    padding: 3em 1em;
+  }
+  .container--hero {
+    height: auto;
+    min-height: initial;
+  }
+  .container--hero h1 {
+    font-size: 3rem;
+  }
+}
+
+.row {
+  margin: 0 auto;
+  max-width: var(--grid-max-width);
+}
+
+.row--flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.row--flexbox > * {
+  flex: 1 1 auto;
+}
+
+
+.row--flexbox--column {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.row--flexbox--column > * {
+  flex: 0 1 auto;
 }
 
 /* code highlighting */

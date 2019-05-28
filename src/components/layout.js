@@ -8,7 +8,7 @@ import "./header.css"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { location, title, children, invertLogo } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
@@ -22,7 +22,7 @@ class Layout extends React.Component {
           }}
           to={`/`}
         >
-          <Logo title={title}/>
+          <Logo title={title} invertLogo={invertLogo}/>
           <h1 className='screenreader'>{title}</h1>
         </Link>
       )
@@ -36,20 +36,13 @@ class Layout extends React.Component {
           }}
           to={`/`}
         >
-          <Logo title={title}/>
+          <Logo title={title} invertLogo={invertLogo}/>
         </Link>
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          padding: `0 ${rhythm(3 / 4)}`,
-          maxWidth: rhythm(32)
-        }}
-      >
-        <header className='header'>{header}</header>
+      <div className='content'>
+        <header className='header'><div className='header__content'>{header}</div></header>
         <main>{children}</main>
       </div>
     )

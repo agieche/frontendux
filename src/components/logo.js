@@ -9,8 +9,10 @@ import React from "react"
 import LogoImage from "../../content/assets/logo.svg";
 
 function Logo(props) {
+
+
   return (
-    <div className='logo'>
+    <div className={`logo ${ props.invertLogo ? 'logo--inverted' : ''}`}>
       <LogoImage />
     </div>
   )

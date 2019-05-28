@@ -429,13 +429,13 @@ class BlogPostTemplate extends React.Component {
 
 Now, there should be a comment form below your post. 🎉
 
-<hr class='without-number' />
+---------------------
 
 ## Deploy your blog to netlify
 
 TBD - Figured it out, but need to write about it...
 
-<hr class='without-number' />
+---------------------
 
 ## Conclusion
 
