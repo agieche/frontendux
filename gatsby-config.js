@@ -57,8 +57,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `frontendUX.dev`,
+        short_name: `frontendUX`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#a058f8`,
