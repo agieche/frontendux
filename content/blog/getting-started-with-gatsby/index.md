@@ -370,6 +370,7 @@ module.exports = {
 }
 
 ```
+You need to insert your tracking ID ( looks similar to this: `UA-123456789-1`) and change your cookie domain to your domain. In my case, the cookie domain would be: `frontendux.dev`.
 
 For more info about the plugin, visit the [plugin page](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/).
 
