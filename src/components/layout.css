@@ -129,9 +129,10 @@ hr {
     min-height: initial;
   }
   .container--hero h1 {
-    font-size: 3rem;
+    font-size: 2.3rem;
   }
 
+  .container:first-of-type,
   .container:not(.container--hero):first-of-type {
     padding-top: calc(var(--header-height-mobile) + 3em);
   }

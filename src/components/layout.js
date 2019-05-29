@@ -7,6 +7,7 @@ import "./layout.css"
 import "./header.css"
 
 class Layout extends React.Component {
+
   render() {
     const { location, title, children, invertLogo } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
