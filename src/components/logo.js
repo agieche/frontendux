@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import LogoImage from "../../content/assets/logo.svg";
+import LogoImage from "../../content/assets/logo_2.svg";
 
 function Logo(props) {
 
