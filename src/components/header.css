@@ -13,3 +13,13 @@
 .header__content {
   flex: 0 1 var(--grid-max-width);
 }
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: var(--header-height-mobile);
+    justify-content: flex-start;
+  }
+  .header__logo {
+    max-width: 70%;
+  }
+}

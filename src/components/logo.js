@@ -12,7 +12,7 @@ function Logo(props) {
 
 
   return (
-    <div className={`logo ${ props.invertLogo ? 'logo--inverted' : ''}`}>
+    <div className={`header__logo logo ${ props.invertLogo ? 'logo--inverted' : ''}`}>
       <LogoImage />
     </div>
   )
