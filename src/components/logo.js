@@ -6,12 +6,13 @@
  */
 
 import React from "react"
-
 import { TimelineMax, Bounce } from "gsap"
-
 import drawSVG from "../utils/draw_svg";
-
 import LogoImage from "../../content/assets/logo_2.svg";
+
+// prevent tree shaking
+const myPlugins = [drawSVG];
+
 // import LogoAnimationStep1 from "../../content/assets/logo_animation_1.svg";
 // import LogoAnimationStep2 from "../../content/assets/logo_animation_2.svg";
 // import LogoAnimationStep3 from "../../content/assets/logo_animation_3.svg";
