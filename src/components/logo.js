@@ -7,11 +7,7 @@
 
 import React from "react"
 import { TimelineMax, Bounce } from "gsap"
-import drawSVG from "../utils/draw_svg";
-import LogoImage from "../../content/assets/logo_2.svg";
-
-// prevent tree shaking
-const myPlugins = [drawSVG];
+// import DrawSVGPlugin from "../utils/draw_svg";
 
 // import LogoAnimationStep1 from "../../content/assets/logo_animation_1.svg";
 // import LogoAnimationStep2 from "../../content/assets/logo_animation_2.svg";
@@ -25,24 +21,21 @@ class Logo extends React.Component {
 
   constructor(props) {
     super(props);
-    // reference to the DOM node
+
     this.svgLogo = null;
     this.logoTextPath = null;
     this.logoIconPath = null;
 
-    // reference to the animation
     this.timeLine = new TimelineMax({paused: true});
   }
 
   componentDidMount() {
-    // debugger
-    // TweenLite.set('#' + this.logoTextPath.id, {visibility:"visible"});
-    // TweenLite.fromTo('#' + this.logoTextPath.id,3 , {drawSVG:"100%"}, {drawSVG:"0%"});
-    // TweenLite.fromTo('#' + this.logoTextPath.id,3 , {drawSVG:"0%"}, {drawSVG:"100%"});
-    // TweenLite.fromTo('#' + this.logoIconPath.id,3 , {drawSVG:"100%"}, {drawSVG:"0%"});
-
-    // TweenMax.fromTo('#' + this.logoIconPath.id, 6, {drawSVG:"0%"}, {drawSVG:"100%", ease: SlowMo.ease.config(0.7, 0.7, false)});
-    // TweenMax.fromTo('#' + this.logoTextPath.id, 100, {drawSVG:"0%"}, {delay: 6, drawSVG:"100%", ease: Elastic.easeOut.config(1, 0.3)});
+		try {
+      // workaround for tree shaking issues => https://github.com/greensock/GreenSock-JS/issues/290
+			require("../utils/draw_svg")
+		} catch (e) {
+			console.error(e)
+		}
 
     this.timeLine
       .to('#' + this.logoIconPath.id, 0, {drawSVG: '0%'})
