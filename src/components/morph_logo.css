@@ -9,7 +9,7 @@
 .morph-logo__wrapper,
 .morph-logo__stage {
   /* height: calc(var(--header-height)); */
-  height: 200px;
+  height: 141px;
   width: auto;
 }
 
@@ -23,7 +23,7 @@
 
 .morph-logo__stage {
   position: absolute;
-  top: 60px;
+  top: 28px;
 }
 
 @media screen and (max-width: 480px) {

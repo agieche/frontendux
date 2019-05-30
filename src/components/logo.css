@@ -1,31 +1,30 @@
 .logo__wrapper {
-    transform: translate(-1px, 1px);
-  }
+  transform: translate(-3px, 1px); /* align with moprh logo */
+}
   
+.logo__wrapper,
+.logo__stage {
+  height: calc(var(--header-height) - 55px);
+  width: auto;
+}
+
+.logo__text {
+  transform: scale(0.6) translate(55px,16px);
+}
+
+@media screen and (max-width: 1024px) {
   .logo__wrapper,
   .logo__stage {
-    height: calc(var(--header-height) - 55px);
-    width: auto;
+    height: 40px;
   }
-  
-  .logo__text {
-    transform: scale(0.6) translate(55px,16px);
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    text-align: center;
   }
-  
-  @media screen and (max-width: 1024px) {
-    .logo__wrapper,
-    .logo__stage {
-      height: 40px;
-    }
+  .logo__wrapper,
+  .logo__stage {
+    height: 30px;
   }
-  
-  @media screen and (max-width: 480px) {
-    .logo {
-      text-align: center;
-    }
-    .logo__wrapper,
-    .logo__stage {
-      height: 30px;
-    }
-  }
-  
+}
