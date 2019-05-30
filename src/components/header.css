@@ -20,6 +20,7 @@
   .header {
     height: var(--header-height-mobile);
     justify-content: flex-start;
+    padding: 0 1em;
   }
   .header__logo {
     max-width: 70%;
