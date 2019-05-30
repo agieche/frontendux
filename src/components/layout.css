@@ -5,7 +5,9 @@
   --color-secondary: #00df7a;
   --color-secondary-alternate: #1a1a1a;
 
-  --color-copy-primary: #1a1a1a;
+  --color-secondary-light: #00ff8c;
+
+  --color-copy-primary: #161414;
   --color-copy-primary-inverted: #ffffff;
   --color-link: #7d19f7;
   --color-link-hover: #a058f8;
@@ -32,24 +34,6 @@ ul, ol {
   ul, ol {
     margin-left: 0;
   }
-}
-
-.logo svg {
-  max-width: 90%;
-}
-
-.logo__icon {
-  fill: var(--color-secondary);
-}
-
-.logo__text {
-  fill: var(--color-primary-alternate);
-}
-
-@media screen and (max-width: 480px) {
-  .logo {
-    text-align: center;
-  }  
 }
 
 .screenreader {
@@ -83,10 +67,6 @@ hr {
 
 .container:not(.container--hero):first-of-type {
   padding-top: calc(var(--header-height) + 4em);
-}
-
-.logo {
-  height: 48px;
 }
 
 .container--alternate {

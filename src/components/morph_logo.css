@@ -1,0 +1,40 @@
+.morph-logo {
+
+}
+
+.morph-logo__wrapper {
+  position: relative;
+}
+
+.morph-logo__wrapper,
+.morph-logo__stage {
+  /* height: calc(var(--header-height)); */
+  height: 200px;
+  width: auto;
+}
+
+.morph-logo__target {
+  display: none;
+}
+
+.morph-logo__link:hover .morph-logo__stage path {
+  fill: var(--color-secondary-light);
+}
+
+.morph-logo__stage {
+  position: absolute;
+  top: 60px;
+}
+
+@media screen and (max-width: 480px) {
+  .morph-logo__wrapper,
+  .morph-logo__stage {
+    height: 110px;
+    width: auto;
+  }
+  .morph-logo__stage {
+    top: 50px;
+    left: 10px;
+  }
+  
+}

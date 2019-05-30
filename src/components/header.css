@@ -12,6 +12,8 @@
 
 .header__content {
   flex: 0 1 var(--grid-max-width);
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 480px) {

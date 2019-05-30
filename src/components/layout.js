@@ -2,7 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
-import Logo from "./logo"
+import LogoMorph from "./logo_morph";
+import Logo from "./logo";
 import "./layout.css"
 import "./header.css"
 
@@ -15,30 +16,11 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          <Logo title={title} invertLogo={invertLogo}/>
-          <h1 className='screenreader'>{title}</h1>
-        </Link>
+        <Logo title={title} invertLogo={invertLogo}/>
       )
     } else {
-      header = (
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          <Logo title={title} invertLogo={invertLogo}/>
-        </Link>
+      header = (       
+        <LogoMorph title={title}/>
       )
     }
     return (
