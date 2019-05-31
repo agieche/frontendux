@@ -1,6 +1,6 @@
 ---
 title: 'How to setup a developer blog with gatsby.js and netlify'
-date: "2019-05-22T22:12:03.284Z"
+date: "2019-06-01T00:20:03.284Z"
 description: Follow my short journey on starting a development blog with gatsby.
 ---
 
