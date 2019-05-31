@@ -1,5 +1,5 @@
 ---
-title: Starting your own dev blog with gatsby
+title: 'How to setup a developer blog with gatsby.js and netlify'
 date: "2019-05-22T22:12:03.284Z"
 description: Follow my short journey on starting a development blog with gatsby.
 ---
@@ -10,12 +10,23 @@ wanted to build this blog with a static site generator called [gatsby.js](https:
 
 ## Gatsby FTW
 
-I decided to give **gatsby** a spin, since it is
+![Gatsby Homepage](./gatsby.png)
 
-- easy to setup
-- easy to reason about, since it supports markdown as content input
-- documented very well
-- praised among developers for its ease and joy of use.
+I decided to give **gatsby** a spin. Here are some key technical facts about gatsby:
+
+- static site generator
+- React-based
+- GraphQL powered (collect your data from everywhere: Markdown, JSON, Headless CMS, APIs etc.)
+- webpack and react-router working in the background
+- PWA ready
+
+Furthermore, gatsby offers:
+- an easy **setup**
+- nice **documentation** for beginners
+- **joy** for the developers using it
+- plenty of great [examples](https://www.gatsbyjs.org/showcase/), e.g. [reactjs.org](https://reactjs.org/) is built with gatsby
+- cheap or free **hosting possibilities** (e.g. netlify), since gatsby simply exports static sites (well, you could host it directly on S3 if you want)
+- speed! gatbsy is **blazing fast** out of the box.
 
 I found several great introductions on how to [setup a gatsby blog](https://daveceddia.com/start-blog-gatsby-netlify/) in general, but since developers also need some plugins for code highlighting, I decided to write my own setup article.
 
@@ -23,28 +34,28 @@ I found several great introductions on how to [setup a gatsby blog](https://dave
 
 ## How to run gatsby locally
 
-**Prerequisites**
+Ok, lets get our hands dirty! First of all, you need the following **prerequisites** to run gatsby locally:
+
 - Text Editor
 - Web Browser
 - Node + NPM or Yarn
 
 **Install CLI**
 ```shell
+yarn global add gatsby-cli
+# or
 npm install -g gatsby-cli
+
 ```
 
 **Create a new site from the gatsby blog template**
+For your first blog, you should really try the gatsby starter blog template by [@kylemathews](https://twitter.com/kylemathews). It is a nice preconfigured blog template, that will work out of the box. Here is, how you install the starter template:
 ```shell
 gatsby new my-frontend-blog https://github.com/gatsbyjs/gatsby-starter-blog
 ```
 
-or alternatively create a blank new site
-
-```shell
-gatsby new my_site_name
-```
-
 **Start developing**
+Now, we can start the dev server and have a first look on our new blog:
 
 ```shell
 cd my-frontend-blog
@@ -57,53 +68,71 @@ gatsby develop
 http://localhost:8000/
 ```
 
-**Simulate a build for production**
+If everything went smoot, you should see something like this:
+![Starter Blog Template](./starter_blog_template.png)
 
-Since gatsby is a static site generator, all of your code and content is translated into static html, js and css, which can be served even on simple hosting providers. If you want to trigger a build for production, you run:
-
-```shell
-gatsby build
-````
-After the build is finished, the `./public` directory should be populated with your updated blog site including all html, images, js and css.
+Nice job! This is easy, right? Just follow along and learn how to adjust your content.
 
 -----------------
 
-## Write your content with Markdown
+## Your first article with markdown
 
-Gatsby is very flexible when it comes to data sources. One easy way to insert data into your blog is by writing markdown files. Your first article (when using the blog starter pack) is editable under `./content/hello-world`. You can add new directories (with an index.md) to the `content`-directory  to add new articles. Gatsby will figure out, that there is a new article and will display it on the homepage article listing.
+Gatsby is GraphQL-powered and therefore very flexible when it comes to data sources. One easy way to insert data into your blog is by writing markdown files. 
 
-If you\'re not familiar with Markdown yet, have a look at the [Markdown GitHub Guide](https://guides.github.com/features/mastering-markdown/).
+Lets take a look at the hello world article, that comes with our starter blog template.
+
+![hello world](./hello_world.png)
+
+This article (when using the blog starter pack) is editable under `./content/blog/hello-world/index.md` and the markup looks like this:
+
 
 ```markdown
-// content/blog/hello_world.md
+// content/blog/hello_world/index.md
 ---
-title: Hello world
-date: "2019-05-22T22:12:03.284Z"
-description: Follow me on my journey to gatsby.
+title: Hello World
+date: "2015-05-01T22:12:03.284Z"
 ---
 
-I wanted to start a blog about frontend related topics for
-a long time now. Due to the inspiration at 
-[Google I/O 19](https://events.google.com/io/), I started to
-setup my blog this evening. Since I read a lot of good
-feedback about it, I wanted to build this blog with a static
-site generator called [gatsby.js](https://www.gatsbyjs.org/).
-I only have experience with rails and wordpress, when it comes
-serving a blog, this is a complete new stack for me. YAY! Let/'s dive in.
+This is my first post on my new fake blog! How exciting!
+
+I'm sure I'll write a lot more interesting things in the future.
+
+Oh, and here's a great quote from this Wikipedia on
+[salted duck eggs](http://en.wikipedia.org/wiki/Salted_duck_egg).
+
+> A salted duck egg is a Chinese preserved food product made by soaking duck
+> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
+> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
+> charcoal paste. The eggs may also be sold with the salted paste removed,
+> wrapped in plastic, and vacuum packed. From the salt curing process, the
+> salted duck eggs have a briny aroma, a gelatin-like egg white and a
+> firm-textured, round yolk that is bright orange-red in color.
+
+![Chinese Salty Egg](./salty_egg.jpg)
 
 ```
+
+
+### Adding new articles
+
+You can add new directories (with an index.md) to the `content`-directory  to add new articles. Gatsby will figure out, that there is a new article and will display it on the homepage article listing.
+
+### Markdown syntax
+If you\'re not familiar with Markdown yet, have a look at the [Markdown GitHub Guide](https://guides.github.com/features/mastering-markdown/).
+
 
 -----------------
 
 
 ## Adjust styling
 
-The default layout, that is provided from the starter teomplate is clean, but you definitely want to give it a little twist to make your blog stand our a little. To add a globally available style, you may add a layout.css file.
+The default layout, that is provided from the starter template is clean, but you may want to give it a little twist in the future to make your blog stand out a little. To add a globally available page styling, you may add a layout.css file.
 
 
 ```css
 /* src/components/layout.css */
 
+/* just an example for a global style declaration */
 html {
   box-sizing: border-box;
 }
@@ -114,18 +143,6 @@ html {
 ```
 
 Then, include the layout.css within your layout component.
-
-```js{numberLines: true}
-// src/components/layout.js
-import React from "react"
-import { Link } from "gatsby"
-// highlight-next-line
-import "./layout.css"
-
-class Layout extends React.Component {
-    // snipped for brevity
-}
-```
 
 ```js
 // src/components/layout.js
@@ -141,20 +158,20 @@ class Layout extends React.Component {
 
 
 
-Finished! Now, your global styling should be included by your layout component. Since the layout component is present on every route, the style is loaded everywhere. Lets proceed to plugins.
+Finished! Now, your global styling should be included by your layout component. Since the layout component is present on every route, the style is loaded everywhere. Now, we're getting to the dev-specific part of this gatsby setup. In the next chapters, you will learn about syntax and code highlighting, add ing support for linenumber display and line highlighting. Let's move!
 
 -----------------
 
 ## Code Highlighting with Gatsby Plugins
-To make code examples easier to grasp, syntax highlighting is a nice addition when using a `<pre>`.
+To make code examples easier to grasp, syntax highlighting is a nice addition when using a `<pre>`. 
 
-Install gatsby-remark-prismjs
+We will use a plugin called gatsby-remark-prismjs to accomplish code highlighting in gatsby:
 
 ```shell
 npm install --save gatsby-transformer-remark gatsby-remark-prismjs prismjs
 ```
 
-Adjust your gatsby-config.js
+Add the gatsby-transformer-remark config object to the plugins array in your gatsby-config.js:
 ```js
 // In your gatsby-config.js
 plugins: [
@@ -204,18 +221,21 @@ plugins: [
 ]
 ```
 
-Pick a theme (available [here](https://github.com/PrismJS/prism/tree/master/themes))
+If you're a developer like me, you won't stick with the default theme and have a look at the other available themes [here](https://github.com/PrismJS/prism/tree/master/themes). Just add the corresponding styling in your gatsby-browser.js like this to view the theme.
+
 ```js{numberLines: true}
 // gatsby-browser.js
 require("prismjs/themes/prism-tomorrow.css");
 ```
 
-Insert a code example into your article:
+Now, you should insert your first code example block into your article like this::
 ```markdown
 // content/blog/hello_world.md
 
 ```js
-console.log('hello world');
+stop().then(() => {
+  console.log('hammer time!')
+});
 ```                                                                     `
 
 ```
@@ -223,8 +243,13 @@ console.log('hello world');
 and it will be displayed as:
 
 ```js
-console.log('hello world');
+stop().then(() => {
+  console.log('hammer time!')
+});
 ```
+
+That's neat. If you need a short break, just listen to [this on spotify](https://open.spotify.com/track/1B75hgRqe7A4fwee3g3Wmu) and come back, when you're finished. In the next chapter, we will tweak code highlighting a little more.
+
 
 -----------------
 
@@ -328,7 +353,13 @@ If you want to know more about code and syntax highlighting, go see [gatsby-rema
 
 ## Add google analytics to your blog
 
-If you want to have insights on, how often your blog is visited and by whom, it's very easy to integrate google analytics tracking with gatsby. 
+Now to something completely different: TRACKING. If you're like me, you may want to have some insights on, how often your blog is visited and by whom. Luckily, Google Analytics is very easy to integrate in gatsby.
+
+Prerequisites:
+
+- Google Analytics Account
+
+Install the google analytics gatsby plugin:
 
 ```shell
 npm install --save gatsby-plugin-google-analytics
@@ -336,7 +367,7 @@ npm install --save gatsby-plugin-google-analytics
 yarn add gatsby-plugin-google-analytics
 ```
 
-After installing, just add this bit of code to your config file:
+After installing, just add the config object to your plugins array. This might feel familiar from setting up code highlighting earlier:
 ```js
 
 // gatsby-config.js
@@ -345,18 +376,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true
+        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID"
       },
     },
   ],
 }
 
 ```
-You need to insert your tracking ID ( looks similar to this: `UA-123456789-1`).
+
+After setting this up, Make sure to insert your google analytics tracking ID into the config ( looks similar to this: `UA-123456789-1`). 
 
 For more info about the plugin, visit the [plugin page](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/).
 
@@ -414,16 +442,95 @@ class BlogPostTemplate extends React.Component {
 
 ```
 
-Now, there should be a comment form below your post. 🎉
+Now, there should be a comment form below your post similar to this one below.
+
+![Comments with disqus](./comments_disqus.png)
+
+We're getting there!  🎉 Our local setup is complete-ish and we can move on to deploying your new blog. Read more in the next chapter.
 
 ---------------------
 
 ## Deploy your blog to netlify
 
-TBD - Figured it out, but need to write about it...
+Now, it's getting serious. Lets deploy your new blog to netlify, an excellent host for static pages just like your new shiny blog.
+
+### Push your code to github
+
+First, you need to create a repo on github [https://github.com/new](https://github.com/new) for your blog, since we will connect the repo with netlify. This will enable netlify, to deploy a new version of your site right after each push to your repo.
+
+After you created a repo on github, you should connect your local version of your blog source code with the remote github repo as described in the success page 
+
+```shell
+# create a new local git repo via commandline
+# replace
+echo "# my-new-blog" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:YOU_GITHUB_ACCOUNT_NAME/YOUR_REPO_NAME.git
+git push -u origin master
+```
+
+```shell
+# or push your existing repo to github
+git remote add origin git@github.com:YOUR_GITHUB_ACCOUNT_NAME/YOUR_REPO_NAME.git
+git push -u origin master
+```
+
+### Setup netlify
+
+1. Register a new netlify account here: [https://app.netlify.com/signup](https://app.netlify.com/signup)
+
+2. After registration, connect your github repo to netlify here: [https://app.netlify.com/start](https://app.netlify.com/start)
+
+### Connection netlify to github
+
+#### Step 1 (https://app.netlify.com/start)
+![Step 1 connect netlify to github](./1_netlify_start.png)
+
+#### Step 2 (Pick a repository)
+![Step 2 connect netlify to github](./2_netlify_auth.png)
+
+#### Step 3 (Site deploy settings)
+![Step 3 connect netlify to github](./3_netlify_repo_select.png)
+
+After successful connection, a deployment should have been triggered and your site should be live on netlify. 🎉
+
+
+### Other hosts
+
+**Create a static version of your blog**
+
+Since gatsby is a static site generator, all of your code and content is translated into static html, js and css, which can be served even on simple hosting providers. If you want to create a new version of your blog, that you can copy to your hosting provider, you simply run:
+
+```shell
+gatsby build
+```
+
+After the build is finished, the `./public` directory should be populated with your updated blog site including all html, images, js and css. From there, you can also manually copy the files to your static hosting service. But I really recommend going with netlify, especially for beginners.
+
 
 ---------------------
 
 ## Conclusion
 
-TBD
+So, you reached the end of this article. YAY! If everything went well, your blog is now live at netlify and you covered the basic parts of a gatsby blog for developers. I hope, you enjoyed the setup as much as I during the setup of frontendux.dev.
+
+I have spent several days now with setting up my blog in my free time using gatsby and netlify. First of all: **it was fun** to experience a new stack powered by react! I discovered many great tutorials and setup guides during setup, that really helped me getting along. As far as I can judge by now, the community (and also the docs) behind gatsby is really nice and active!
+
+**Mandatory happy capybara pic:**
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/Q7fa42S3mYLaU" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/capybara-Q7fa42S3mYLaU">via GIPHY</a></p>
+
+I really liked the idea of the  blog starter template, that gave me a nice and complete starting point. From there, I've could peek into into the different parts of gatsby without the need to understand everything instantly. It just worked and was ready for small adjustments. So I could really tackle one issue a time without getting overwhelmed or frustrated.
+
+So, Gatsby hosted on netlify is a winning combination in my opinion. Local development with gatsby is fast and pretty reliable. What you see in development exactly matches the deployed state on your netlify production environment.
+
+What really impresses me is the performance, that you'll get out of the box with gatsby. Even after adding a somehow heavy logo animation and several images to my article, the speed is quite impressive according to a lighthouse audit:
+
+![Lighthouse Audit Mobile](./lighthouse_audit.png)
+
+Now it's time to start writing articles and keep learning about #JAMstack, gatsby and blogging in general. Happy coding!
+
+## You're also running a gatsby blog?
+
+If yes, please leave a comment with a link to your blog. I'm very curious to see other blogs! I am also very happy about your feedback and hints.

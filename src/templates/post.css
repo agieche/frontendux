@@ -2,7 +2,7 @@
   counter-reset: post;
 } 
 
-.post a {
+.post a:not(.gatsby-resp-image-link) {
   font-weight: var(--font-weight-strong);
   text-decoration: none;
 
@@ -19,7 +19,7 @@
   padding-bottom: 4px;
 }
 
-.post a:hover {
+.post a:not(.gatsby-resp-image-link):hover {
   background-size: 100% 100%;
   color: var(--color-link-inverted);
 }
