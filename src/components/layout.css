@@ -1,5 +1,7 @@
 :root {
   --color-primary: #7d19f7;
+  --color-primary-light: #a058f8;
+  --color-primary-dark: rgba(63,8,131,1);
   --color-primary-alternate: #ffffff;
 
   --color-secondary: #00df7a;
@@ -76,6 +78,8 @@ hr {
 .container--hero {
   display: flex;
   background-color: var(--color-primary);
+  background: linear-gradient(165deg, var(--color-primary-dark) 0%, var(--color-primary) 46%, var(--color-primary-light) 100%);
+  
   height: 70vh;
   min-height: 600px;
 }

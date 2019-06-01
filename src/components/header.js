@@ -12,9 +12,16 @@ import "./header.css"
 
 function Header(props) {
   let logo = props.home ? <Logo title={props.title}/> : <LogoMorph title={props.title}/>;
+  let cssClassName = 'header';
+
+  if (props.home) {
+    cssClassName += ' header--home'
+  } else {
+    cssClassName += ' header--standard'
+  }
 
   return (
-    <header className='header'><div className='header__content'>{logo}</div></header>
+    <header className={cssClassName}><div className='header__content'>{logo}</div></header>
   )    
 }
 
