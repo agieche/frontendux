@@ -79,12 +79,24 @@ class LogoMorph extends React.Component {
       .play();
   }
 
+  handleEnter() {
+    this.timeLine
+      .to(this.logoAnimationStep1, 0.5, {morphSVG:{scale: 1, shape:this.logoAnimationStep4, ease: Elastic.easeOut}, ease: Bounce.ease})
+  }
+
+  handleLeave() {
+    this.timeLine
+      .to(this.logoAnimationStep1, 1, {fill: "#00df7a", scale: 0.8, ease: Elastic.easeOut.config(1, 0.3)})
+      .to(this.logoAnimationStep1, 1, {morphSVG:{shape:this.logoAnimationStep5, ease: Elastic.easeOut}}, '-=1')
+
+  }
+
   render() {
     return (
       <div className={`header__logo morph-logo`}>
         <div className='morph-logo__wrapper'>
           <Link to={`/`} className='morph-logo__link'>
-            <svg ref={svg => this.logoAnimationSvgStep1 = svg} id='logo-animation-svg-step-1' className='morph-logo__stage' width="400px" height="400px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+            <svg onMouseEnter={this.handleEnter.bind(this)} onMouseLeave={this.handleLeave.bind(this)} ref={svg => this.logoAnimationSvgStep1 = svg} id='logo-animation-svg-step-1' className='morph-logo__stage' width="400px" height="400px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                 <title>{this.props.title}</title>
                 <desc>Created with Sketch.</desc>
                 <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
