@@ -168,6 +168,12 @@ hr {
   flex: 0 1 auto;
 }
 
+.gatsby-resp-image-wrapper {
+  /* override centering, since small images look...special */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 /* code highlighting */
 .gatsby-highlight-code-line {
   background-color: #4d4d4d; /* Adjust for your prismjs theme color */
