@@ -4,6 +4,8 @@ date: "2019-06-02T00:20:03.284Z"
 description: Speed up your rails assets delivery by switching to cloudfront
 ---
 
+**THIS ARTICLE IS STILL IN THE MAKING**
+
 This article will teach you, how to increase your rails apps performance by delivering assets
 like static images, scripts and stylesheets from a CDN (AWS Cloudfront).
 
