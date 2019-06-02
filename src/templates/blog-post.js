@@ -33,11 +33,7 @@ class BlogPostTemplate extends React.Component {
             <div className='post'>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
-          </div>
-        </div>
-        <div className='container container--alternate'>
-          <div className='row'>
-            <Bio />
+            <hr />
             <ul
               style={{
                 display: `flex`,
@@ -62,6 +58,13 @@ class BlogPostTemplate extends React.Component {
                 )}
               </li>
             </ul>
+          </div>
+        </div>
+
+
+        <div className='container container--alternate'>
+          <div className='row'>
+            <Bio />
           </div>
         </div>
         <div className='container'>

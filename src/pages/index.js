@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import '../components/post.css';
 
 class BlogIndex extends React.Component {
   render() {
@@ -23,7 +24,7 @@ class BlogIndex extends React.Component {
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <div key={node.fields.slug}>
+                <div className='post-teaser' key={node.fields.slug}>
                   <h3
                     style={{
                       marginBottom: rhythm(1 / 4),
