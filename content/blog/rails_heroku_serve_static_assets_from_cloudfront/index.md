@@ -98,11 +98,21 @@ TBD
 
 --------------------------
 
-## Speed gains / How do we get http2 to work / Enforce http2 protocol with edge addon?
+## Speed gains / Benchmark
 
 TBD
 
 More info: https://www.mixable.net/blog/making-heroku-fast/
+
+--------------------------
+
+## How do we get http2 to work / Enforce http2 protocol with edge addon?
+
+TBD
+
+## Do I still need a CDN with http/2 enabled?
+
+TBD
 
 --------------------------
 
@@ -120,3 +130,6 @@ Sources:
 https://medium.com/@tranduchanh.ms/optimize-rails-app-performance-with-rails-amazon-cloudfront-e3b305f1e86c
 https://www.happybearsoftware.com/use-cloudfront-and-the-rails-asset-pipeline-to-speed-up-your-app.html
 https://www.mixable.net/blog/making-heroku-fast/
+https://dev.to/david_j_eddy/is-http2-really-worth-it-1m2e
+https://www.quora.com/Does-HTTP-2-decrease-or-eliminate-the-need-for-CDN
+
